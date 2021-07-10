@@ -1,4 +1,6 @@
-### I'm relatively good at a few things.
+# I do things
+
+If you ever want to hear some weird music, [check this out](https://open.spotify.com/artist/4hHuSZu5o1ttbN1cpRchga).
 
 <!--
 **piccoloser/piccoloser** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
