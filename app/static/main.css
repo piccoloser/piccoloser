@@ -25,7 +25,18 @@
     padding: 0;
 }
 
-/* ][ ID */
+/* $ ID */
+
+#showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    width: 100%;
+    height: calc(100vh - 3rem);
+}
+#showcase p { width: 55ch; }
 
 #top-bar {
     display: flex;
@@ -48,7 +59,7 @@
     list-style-type: none;
 }
 
-/* ][ TAG */
+/* $ TAG */
 
 a {
     color: var(--link);
