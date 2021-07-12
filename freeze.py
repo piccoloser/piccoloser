@@ -10,6 +10,8 @@ freezer = Freezer(app)
 if __name__ == "__main__":
     freezer.freeze()
 
+    # remove ".html" from links
+    # TODO #1 Account for external links ending in .html
     for file in os.listdir("./app/build"):
         _, ext = os.path.splitext(file)
         if ext == ".html":
