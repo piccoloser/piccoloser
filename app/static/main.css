@@ -1,4 +1,6 @@
 :root {
+    --bd: #555;
+    --bd-radius: 5px;
     --bg: #222;
     --bg-accent: #2a2a2a;
     --font: #eee;
@@ -147,12 +149,13 @@ h4 { font-size: 1rem; }
 h5 { font-size: .75rem; }
 h6 { font-size: .6rem; }
 h1, h2, h3, h4, h5, h6 {
-    margin: 1rem 0;
-
     font-weight: bold;
 }
 
-hr { border-style: solid; }
+hr {
+    margin: .5rem 0 1rem;
+    border: solid 1px var(--bd);
+}
 
 img { height: auto; }
 
@@ -206,6 +209,15 @@ li {
 li:first-child { margin-top: .5rem; }
 li:last-child { margin-bottom: .5rem; }
 
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+
+    padding: 1rem;
+}
+
 mark { background-color: var(--bg-accent); }
 
 caption,
@@ -214,6 +226,19 @@ figcaption,
 p { margin: .5rem 0; }
 
 samp { font-family: monospace; }
+
+section {
+    min-width: 320px;
+    width: calc(50% - 1rem);
+    padding: 1rem;
+
+    background-color: var(--bg-accent);
+    border: solid 1px var(--bd);
+    border-radius: var(--bd-radius);
+}
+section.clear {
+    margin: 0 2rem;
+}
 
 /* matching table-border widths */
 table { border-spacing: 0; }
@@ -236,6 +261,11 @@ tr, th, td {
 }
 
 @media screen and (max-width: 500px) {
+    #showcase { padding: 1rem; }
     #top-bar { justify-content: center; }
     #top-bar nav { display: none; }
+
+    main {
+        padding: 1rem 0;
+    }
 }
