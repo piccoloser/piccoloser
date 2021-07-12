@@ -3,6 +3,7 @@
     --bg-accent: #2a2a2a;
     --font: #eee;
     --link: #cff;
+    --link-hover: #eff;
     
     /* replace this shit eventually */
     --bg-light: #eee;
@@ -33,10 +34,15 @@
     align-items: center;
     justify-content: center;
     
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 3rem);
+
+    padding: 3rem;
 }
-#showcase p { width: 55ch; }
+#showcase p {
+    max-width: 55ch;
+    width: 100%;
+}
 
 #top-bar {
     display: flex;
@@ -64,6 +70,9 @@
 a {
     color: var(--link);
     text-decoration: none;
+}
+a:hover {
+    color: var(--link-hover);
 }
 
 address {
@@ -224,4 +233,9 @@ tbody td:last-child { border-right-width: 2px; }
 tr, th, td {
     border: solid 1px var(--font);
     padding: .5rem .75rem;
+}
+
+@media screen and (max-width: 500px) {
+    #top-bar { justify-content: center; }
+    #top-bar nav { display: none; }
 }
