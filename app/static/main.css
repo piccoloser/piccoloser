@@ -67,6 +67,21 @@
     list-style-type: none;
 }
 
+/* $ CLASS */
+
+.footnotes li { font-size: .9rem; }
+
+.top-link {
+    content: "\21a5";
+
+    float: right;
+    line-height: 1.5rem;
+
+    color: var(--link);
+    cursor: pointer;
+}
+.top-link:hover { color: var(--link-hover); }
+
 /* $ TAG */
 
 a {

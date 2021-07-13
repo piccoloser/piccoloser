@@ -9,6 +9,21 @@ function yearsSince(x) {
     return year - 1970;
 }
 
+function topLinks() {
+    for (const link of document.querySelectorAll(".top-link")) {
+        link.innerHTML = "\u21a5"
+        link.addEventListener("click", () => {
+            window.scrollTo(0, 0);
+            history.pushState(
+                "",
+                document.title,
+                window.location.pathname
+                + window.location.search
+            );
+        });
+    }
+}
+
 const vars = {
     myAge: yearsSince("10/30/1999"),
     yearsCoding: yearsSince("4/1/2012"),
@@ -19,3 +34,5 @@ for (const k of Object.keys(vars)) {
         item.innerHTML = vars[k];
     }
 }
+
+topLinks()
