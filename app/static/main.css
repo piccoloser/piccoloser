@@ -6,18 +6,12 @@
     --font: #eee;
     --link: #cff;
     --link-hover: #eff;
-    
-    /* replace this shit eventually */
-    --bg-light: #eee;
-    --bg-muted: #ddd;
-    --gray: #456;
-    --gray-accent: #345;
-    --dark: #234;
-    /*
-    --bg: #fff;
-    --bg-accent: #bbb;
-    --font: #000;
-    */
+    --light: #bbb;
+    --lighter: #ddd;
+    --message-failure: #a00;
+    --message-info: #08a;
+    --message-success: #080;
+    --muted: #333;
 }
 
 * {
@@ -71,6 +65,54 @@
 
 .footnotes li { font-size: .9rem; }
 
+.form-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+
+    margin: .5rem 0;
+}
+
+.form-submit {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.message-stack {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    z-index: 2;
+}
+
+.message {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    width: calc(100% - 1rem);
+    margin: .5rem;
+}
+.message a, p { padding: .25rem 1rem; }
+.message a.message-close,
+.message a.message-close:hover {
+    color: var(--font) !important;
+    cursor: pointer;
+}
+.message a.message-close:hover {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+}
+
+.message-failure { background: var(--message-failure); }
+.message-info { background: var(--message-info); }
+.message-success { background: var(--message-success); }
+
+.no-border { border: none !important; }
+
 .top-link {
     content: "\21a5";
 
@@ -98,7 +140,7 @@ address {
 }
 
 blockquote {
-    background-color: var(--bg-muted);
+    background-color: var(--muted);
     border-left: solid 2px var(--font);
     color: var(--font);
     font-size: .9rem;
@@ -146,7 +188,7 @@ figcaption {
 
 button,
 form input {
-    border: solid 1px var(--dark);
+    border: solid 1px var(--bd);
     border-radius: 5px;
     padding: .25rem;
 }
@@ -180,8 +222,8 @@ input[type=button],
 input[type=submit],
 input[type=reset] {
     padding: .25rem .5rem;
-    background-color: var(--bg);
-    color: var(--font);
+    background-color: var(--light);
+    color: black;
     cursor: pointer;
     transition: background-color .1s;
 }
@@ -189,7 +231,7 @@ input[type=reset] {
 button:hover,
 input[type=button]:hover,
 input[type=reset]:hover,
-input[type=submit]:hover { background-color: var(--bg-light); }
+input[type=submit]:hover { background-color: var(--lighter); }
 
 input[type=color] {
     border-radius: unset;
@@ -203,7 +245,7 @@ input[type=file] {
 }
 
 kbd {
-    background-color: var(--bg-light);
+    background-color: var(--light);
     border-radius: 5px;
     color: var(--bg);
 }

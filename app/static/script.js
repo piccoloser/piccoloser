@@ -22,6 +22,14 @@ function topLinks() {
             );
         });
     }
+}   
+
+function closeMessageLinks() {
+    for (const link of document.querySelectorAll(".message-close")) {
+        link.addEventListener("click", () => {
+            link.parentElement.style.display = "none";
+        });
+    }
 }
 
 const vars = {
@@ -35,4 +43,5 @@ for (const k of Object.keys(vars)) {
     }
 }
 
-topLinks()
+topLinks();
+closeMessageLinks();
