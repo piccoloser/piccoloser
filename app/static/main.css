@@ -149,7 +149,10 @@ blockquote {
     padding: .75rem 1rem;
 }
 
-body { background-color: var(--bg); }
+body {
+    background-color: var(--bg);
+    overflow-x: hidden;
+}
 
 cite { font-size: .8rem; }
 
@@ -318,7 +321,7 @@ tr, th, td {
     padding: .5rem .75rem;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 620px) {
     #showcase { padding: 1rem; }
     #top-bar { justify-content: center; }
     #top-bar nav { display: none; }

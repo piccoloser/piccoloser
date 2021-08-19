@@ -17,6 +17,9 @@
                 <li><a href="{{ url_for('index') }}">home</a></li>
                 <li><a href="{{ url_for('about') }}">about</a></li>
                 <li><a href="{{ url_for('blog') }}">blog</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('logout') }}">log out</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
