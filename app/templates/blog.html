@@ -1,8 +1,39 @@
 {% extends "base.html" %}
 {% block body %}
 
-<div id="showcase">
-    <h1>Insert fancy blog here</h1>
-</div>
+<main class="with-sidebar">
+    <!-- <div id="showcase">
+        <h1>Insert fancy blog here</h1>
+    </div> -->
+
+    <div class="content">
+        {% if current_user.is_authenticated %}
+            <section>
+                <a class="center large-text" href="{{ url_for('post') }}"><b>&#9998; create a new post</b></a>
+            </section>
+        {% endif %}
+
+        <section class="post-preview">
+            <h1>I Hate Filler Text, And Here's Why</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, deserunt ullam? Eius voluptatem odit tempora saepe beatae suscipit ratione deleniti officiis recusandae autem molestias, voluptates nihil culpa. Consequuntur, similique magni!</p>
+            <p>Soluta, harum nesciunt. Placeat ad voluptas quisquam dolorem temporibus hic nisi sed, debitis excepturi. Consequatur quam unde minus. Eligendi hic mollitia ipsam dignissimos deserunt, facilis ex adipisci reprehenderit culpa suscipit.</p>
+            <p>Ut, nisi explicabo quibusdam dolores autem error temporibus quod quam expedita eos, aliquam cum sint beatae voluptatibus numquam ipsum nemo, fugit molestias consequuntur? Deleniti illum accusantium enim id <a href="{{ url_for('index') }}">random link back to the home page</a></p>
+        </section>
+
+        <section class="post-preview">
+            <h1>Totally Useful Information</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A natus quas delectus, odio nam molestiae id, omnis ea aliquam nobis ipsum voluptate dicta rem nostrum quia distinctio unde! Excepturi, quaerat.</p>
+        </section>
+
+        <section class="post-preview">
+            <h1>No Content Here</h1>
+        </section>
+    </div>
+    <aside>
+        <h1>Sidebar Stuff</h1>
+    </aside>
+    
+</main>
+
 
 {% endblock body %}

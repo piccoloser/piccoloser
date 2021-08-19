@@ -1,5 +1,5 @@
 from app import app, bc, db
-from app.forms import LoginForm
+from app.forms import LoginForm, PostForm
 from app.models import User, Post
 
 from flask import flash, redirect, render_template, request, url_for
@@ -51,7 +51,13 @@ def logout():
     return redirect("/")
 
 
-@app.route("/post")
+@app.route("/post", methods = ["GET", "POST"])
 @login_required
 def post():
-    return render_template("post.html")
+    form = PostForm()
+
+    if form.validate_on_submit():
+        flash("Post created!", category = "success")
+        return redirect(url_for("blog"))
+
+    return render_template("post.html", form = form)
