@@ -32,6 +32,12 @@ function closeMessageLinks() {
     }
 }
 
+function toggleNavigation() {
+    let nav = document.getElementById("toggle-nav-button");
+
+    
+}
+
 const vars = {
     myAge: yearsSince("10/30/1999"),
     yearsCoding: yearsSince("4/1/2012"),
