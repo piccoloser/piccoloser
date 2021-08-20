@@ -166,6 +166,12 @@
     pointer-events: none;
 }
 
+.top-bar {
+    display: none; /* see media queries */
+    width: calc(100% - 2rem) !important;
+    margin: 0 1rem .5rem;
+}
+
 .top-link {
     content: "\21a5";
 
@@ -349,7 +355,7 @@ p { margin: .5rem 0; }
 
 samp { font-family: monospace; }
 
-section, aside {
+section, .sidebar, .top-bar {
     min-width: 320px;
     width: 100%;
     padding: 1rem;
@@ -381,7 +387,7 @@ tr, th, td {
     padding: .5rem .75rem;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 685px) {
     #showcase { padding: 1rem; }
     #top-bar { justify-content: center; }
     #top-bar nav { display: none; }
@@ -389,4 +395,10 @@ tr, th, td {
     main {
         padding: 1rem 0;
     }
+    main.with-sidebar {
+        grid-template-columns: [main] 1fr;
+    }
+    main.with-sidebar .content { margin: 0 1rem; }
+    main.with-sidebar .top-bar { display: block; }
+    main.with-sidebar .sidebar { display: none; }
 }

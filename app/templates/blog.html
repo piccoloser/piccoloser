@@ -6,10 +6,15 @@
         <h1>Insert fancy blog here</h1>
     </div> -->
 
+    <header class="top-bar">
+        <h1>Top Bar Stuff</h1>
+    </header>
     <div class="content">
         {% if current_user.is_authenticated %}
             <section>
-                <a class="center large-text" href="{{ url_for('post') }}"><b>&#9998; create a new post</b></a>
+                <a class="center large-text" href="{{ url_for('post') }}">
+                    <b>&#9998; create a new post</b>
+                </a>
             </section>
         {% endif %}
 
@@ -29,7 +34,7 @@
             <h1>No Content Here</h1>
         </section>
     </div>
-    <aside>
+    <aside class="sidebar">
         <h1>Sidebar Stuff</h1>
     </aside>
     
