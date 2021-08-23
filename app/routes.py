@@ -1,4 +1,4 @@
-from app import app, bc, db
+from app import app, bc, db, markdown
 from app.forms import LoginForm, PostForm
 from app.models import User, Post
 
@@ -19,7 +19,9 @@ def about():
 
 @app.route("/blog")
 def blog():
-    return render_template("blog.html")
+    posts = Post.query.all()
+
+    return render_template("blog.html", markdown = markdown, posts = posts)
 
 
 @app.route("/login", methods = ["GET", "POST"])
@@ -51,13 +53,22 @@ def logout():
     return redirect("/")
 
 
-@app.route("/post", methods = ["GET", "POST"])
+@app.route("/post/new", methods = ["GET", "POST"])
 @login_required
-def post():
+def create_post():
     form = PostForm()
 
     if form.validate_on_submit():
-        flash("Post created!", category = "success")
+        post = Post(
+            title = form.title.data,
+            content = form.content.data,
+            author = current_user
+        )
+
+        db.session.add(post)
+        db.session.commit()
+
         return redirect(url_for("blog"))
 
-    return render_template("post.html", form = form)
+    return render_template("create_post.html", form = form)
+

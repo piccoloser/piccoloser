@@ -7,17 +7,24 @@
     </div> -->
 
     <header class="top-content">
-        <h1>Top Bar Stuff</h1>
+        <strong>Top Bar Stuff</strong>
     </header>
     <div class="content">
         {% if current_user.is_authenticated %}
             <section>
-                <a class="center large-text" href="{{ url_for('post') }}">
+                <a class="center large-text" href="{{ url_for('create_post') }}">
                     <b>&#9998; create a new post</b>
                 </a>
             </section>
         {% endif %}
 
+        {% for post in posts %}
+            <section class="post-preview">
+                <h1>{{ post.title }}</h1>
+                {{ post.content|markdown }}
+            </section>
+        {% endfor %}
+        
         <section class="post-preview">
             <h1>I Hate Filler Text, And Here's Why</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, deserunt ullam? Eius voluptatem odit tempora saepe beatae suscipit ratione deleniti officiis recusandae autem molestias, voluptates nihil culpa. Consequuntur, similique magni!</p>

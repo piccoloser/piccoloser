@@ -10,7 +10,7 @@
 </head>
 <body>
     <header id="top-bar">
-        <h1><a href="{{ url_for('index') }}">_piccoloser</a></h1>
+        <a href="{{ url_for('index') }}">_piccoloser</a>
 
         <nav id="site-navigation">
             <ul>
@@ -24,7 +24,7 @@
         </nav>
     </header>
 
-    <button id="toggle-nav-button" onclick="toggleNavigation()"></button>
+    <div id="toggle-nav-button" onclick="toggleNavigation()"></div>
     <p id="toggle-nav-button-text">&#9776;</p>
 
     {% with messages = get_flashed_messages(with_categories = true) %}

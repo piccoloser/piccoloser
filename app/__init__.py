@@ -4,6 +4,8 @@ from flask_bcrypt import Bcrypt
 
 from flask_login import LoginManager
 
+from flaskext.markdown import Markdown
+
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -17,6 +19,8 @@ db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
 login_manager.login_message_category = "info"
+
+markdown = Markdown(app)
 
 
 from app import routes
