@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <header class="top-content">
+        <strong>Top Bar Stuff</strong>
+    </header>
+    <main class="with-sidebar">
+        <article class="post-content">
+            <header>
+                <h1>{{ post.title }}</h1>
+                <cite>{{ post.author.first_name }} {{ post.author.last_name }}, {{ post.date.strftime("%d-%m-%Y") }}</cite>
+            </header>
+        
+            {{ post.content|markdown }}
+        </article>
+
+        <aside class="side-content">
+            <strong>Sidebar Stuff</strong>
+        </aside>
+    </main>
+
+{% endblock body %}
