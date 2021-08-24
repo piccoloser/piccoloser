@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>_piccoloser</title>
+    <title>{{ title }}</title>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}">
 </head>
 <body>
     <header id="top-bar">
-        <a href="{{ url_for('index') }}">_piccoloser</a>
+        <a href="{{ url_for('home') }}">_piccoloser</a>
 
         <nav id="site-navigation">
             <ul>
-                <li><a href="{{ url_for('index') }}">home</a></li>
+                <li><a href="{{ url_for('home') }}">home</a></li>
                 <li><a href="{{ url_for('about') }}">about</a></li>
                 <li><a href="{{ url_for('blog') }}">blog</a></li>
                 {% if current_user.is_authenticated %}

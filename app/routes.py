@@ -2,26 +2,31 @@ from app import app, bc, db, markdown
 from app.forms import LoginForm, PostForm
 from app.models import User, Post
 
-from flask import flash, redirect, render_template, request, url_for
+from flask import abort, flash, redirect, render_template, request, url_for
 
 from flask_login import current_user, login_user, logout_user, login_required
 
 
 @app.route("/")
-def index():
-    return render_template("index.html")
+def home():
+    return render_template("home.html", title = "_piccoloser")
 
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", title = "about")
 
 
 @app.route("/blog")
 def blog():
     posts = Post.query.all()
 
-    return render_template("blog.html", markdown = markdown, posts = posts)
+    return render_template(
+        "blog.html",
+        title = "blog",
+        markdown = markdown,
+        posts = posts
+    )
 
 
 @app.route("/login", methods = ["GET", "POST"])
@@ -45,7 +50,7 @@ def login():
                 category = "failure"
             )
 
-    return render_template("login.html", form = form)
+    return render_template("login.html", title = "login", form = form)
 
 @app.route("/logout")
 def logout():
@@ -62,7 +67,8 @@ def create_post():
         post = Post(
             title = form.title.data,
             content = form.content.data,
-            author = current_user
+            author = current_user,
+            draft = form.draft.data,
         )
 
         db.session.add(post)
@@ -70,11 +76,51 @@ def create_post():
 
         return redirect(url_for("blog"))
 
-    return render_template("create_post.html", form = form)
+    return render_template(
+        "post_actions.html", 
+        title = "create post", 
+        form = form,
+        legend = "create post",
+    )
+
+
+@app.route("/post/<int:post_id>/delete", methods = ["GET", "POST"])
+
+
+@app.route("/post/<int:post_id>/edit", methods = ["GET", "POST"])
+@login_required
+def edit_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    
+    if post.author != current_user: abort(403)
+
+    form = PostForm()
+
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        post.draft = form.draft.data
+
+        db.session.commit()
+        
+        flash("Your post has been updated!", category = "success")
+        return redirect(url_for("post", post_id = post_id))
+    
+    elif request.method == "GET":
+        form.title.data = post.title
+        form.content.data = post.content
+        form.draft.data = post.draft
+
+    return render_template(
+        "post_actions.html", 
+        title="edit post", 
+        form = form,
+        legend = "edit post",
+    )
 
 
 @app.route("/post/<int:post_id>")
 def post(post_id: int):
     post = Post.query.get_or_404(post_id)
 
-    return render_template("post.html", post = post)
+    return render_template("post.html", title = post.title, post = post)

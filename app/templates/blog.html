@@ -13,13 +13,28 @@
                     <b>&#9998; create a new post</b>
                 </a>
             </section>
+
+            <h1 class="post-preview-header">Draft Posts:</h1>
+            {% for post in posts if post.draft %}
+                    <section class="post-preview post-draft">
+                        <strong><a href="{{ url_for('post', post_id = post.id) }}">{{ post.title }}</a></strong>
+                        {{ post.content|markdown }}
+                    </section>
+            {% endfor %}
+            
         {% endif %}
 
-        {% for post in posts %}
+        {% if current_user.is_authenticated %}
+            <h1 class="post-preview-header">Public Posts:</h1>
+        {% endif %}
+
+        {% for post in posts if not post.draft %}
+
             <section class="post-preview">
                 <strong><a href="{{ url_for('post', post_id = post.id) }}">{{ post.title }}</a></strong>
                 {{ post.content|markdown }}
             </section>
+
         {% endfor %}
     </div>
     <aside class="side-content">

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 
-from wtforms import PasswordField, StringField, SubmitField, TextAreaField
+from wtforms import BooleanField, PasswordField, StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email
 
 
@@ -13,4 +13,5 @@ class LoginForm(FlaskForm):
 class PostForm(FlaskForm):
     title = StringField("title", validators = [DataRequired()])
     content = TextAreaField("content", validators = [DataRequired()])
+    draft = BooleanField("this post is a draft")
     submit = SubmitField("post")

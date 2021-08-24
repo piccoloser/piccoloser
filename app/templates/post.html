@@ -6,13 +6,36 @@
     </header>
     <main class="with-sidebar">
         <article class="post-content">
-            <header>
-                <h1>{{ post.title }}</h1>
-                <cite>{{ post.author.first_name }} {{ post.author.last_name }}, {{ post.date.strftime("%d-%m-%Y") }}</cite>
-            </header>
-        
-            {{ post.content|markdown }}
+            {% if not post.draft or post.author == current_user %}
+                
+                <header>
+                    <h1>{{ post.title }}</h1>
+                    <cite>{{ post.author.first_name }} {{ post.author.last_name }}, {{ post.date.strftime("%d-%m-%Y") }}</cite>
+                </header>
+                
+                {{ post.content|markdown }}
+
+            {% else %}
+
+                <header>
+                    <h1>Nice Try!</h1>
+                    <cite>Hunter Logan, 10/30/1999</cite>
+                </header>
+
+                <h3>You found an article that hasn't been posted yet.</h3>
+
+                <p>Yes, an article with that ID exists, but I'm not ready to post it!</p>
+
+            {% endif %}
+
+            {% if post.author == current_user %}
+                <section class="post-actions">
+                    <a href="{{ url_for('edit_post', post_id = post.id) }}">edit post</a>
+                    <a href="">delete post</a>
+                </section>
+            {% endif %}
         </article>
+                
 
         <aside class="side-content">
             <strong>Sidebar Stuff</strong>

@@ -150,8 +150,15 @@
     position: relative;
     max-width: 100%;
 }
+.content h1 { padding-left: 1rem; }
 
 .footnotes li { font-size: .9rem; }
+
+.form-boolean {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+}
 
 .form-group {
     display: flex;
@@ -171,7 +178,10 @@
     padding: 1ch;
 }
 
-.form-post { padding: 0 1rem; }
+.form-post {
+    margin: 1rem;
+    padding: 0 1rem;
+}
 .form-post .form-group {
     display: flex;
     flex-direction: column;
@@ -181,6 +191,9 @@
     margin: 1rem 0;
 }
 .form-post .form-label { display: block; }
+.form-post legend {
+    font-size: 2rem;
+}
 
 .form-submit {
     padding-left: 1rem !important;
@@ -223,6 +236,15 @@
 
 .no-border { border: none !important; }
 
+.post-actions {
+    display: flex;
+    justify-content: space-evenly;
+
+    border: none;
+    border-top: solid 1px var(--bd);
+    margin: 2rem 1rem -1rem;
+}
+
 .post-content header {
     margin-bottom: 1.5rem;
 
@@ -230,10 +252,13 @@
 }
 .post-content header cite {
     display: block;
+    
+    margin-left: 1rem;
+}
 
-    width: 100%;
-
-    text-align: right;
+.post-draft {
+    opacity: .5;
+    max-height: 7rem !important;
 }
 
 .post-preview {
@@ -263,6 +288,11 @@
 .post-preview * {
     margin-top: 0;
     font-weight: normal;
+}
+
+.post-preview-header {
+    margin: 2rem 0;
+    border-bottom: solid 2px var(--bd);
 }
 
 .top-content {
