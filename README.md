@@ -1,5 +1,5 @@
 # About Me
-I'm primarily a Python developer, but I'm currently focusing on software design and project structure. I started in April of 2012 with basic web design, then picked up Python a couple years later. I'm in the process of learning Rust as of 2020.
+I'm primarily a Python developer, but I'm currently focusing on software design. I started in April of 2012 with basic web design, then picked up Python a couple years later. I'm in the process of learning Rust as of 2020.
 
 As for my non-programming skills and hobbies, I'm an independent musician, photographer, graphic designer, video editor, and writer/editor. My biggest flex is a consistent triple-digit typing speed and the fact that I use the Dvorak keyboard layout.
 
