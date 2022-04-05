@@ -1,9 +1,9 @@
 # About Me
 I'm primarily a Python developer, but I'm currently focusing on software design. I started in April of 2012 with basic web design, then picked up Python a couple years later. I'm in the process of learning Rust as of 2020.
 
-As for my non-programming skills and hobbies, I'm an independent musician, photographer, graphic designer, video editor, and writer/editor. My biggest flex is a consistent triple-digit typing speed and the fact that I use the Dvorak keyboard layout.
+I'm an independent musician, photographer, graphic designer, video editor, and writer/editor. I'm also getting into mechanical keyboards, and my daily driver is a 40% ortholinear I built myself.
 
-The best way to get me talking is to talk about music, specifically Experimental music, or speculative science.
+The best way to get me talking is to speculate about pretty much anything.
 
 It's easiest to reach me via Instagram @_piccoloser
 
