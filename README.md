@@ -6,7 +6,9 @@ I'm a self-taught developer aiming for fullstack. I've made websites, web-applic
 
 I implement practices from both OOP and functional programming in my code, and I'm very careful with my design. To add to that, I make a point of documenting my work and making sure that I never again have to scan through my own code trying to figure out what it does.
 
-I consider myself an avid typist. My personal best is 143WPM (50 words, basic English). I type on a custom mechanical keyboard that I built myself, and that's where I get my best speeds. [I actually have two of them](https://imgur.com/gallery/V6pnpEd).
+I consider myself an avid typist. My personal best is 150WPM (50 words, basic English). I type on a custom mechanical keyboard that I built myself, and that's where I get my best speeds. [I actually have two of them](https://imgur.com/gallery/V6pnpEd).
+
+Most of my work is done in private organization repos, but surely there are some interesting things lying around here...
 
 ## Outside the Office
 
