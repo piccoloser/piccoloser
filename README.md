@@ -1,7 +1,7 @@
 # About Me
 I'm a self-taught fullstack developer. I generally favor Rust for everything, but I'll use Svelte for frontend work.
 
-I consider myself an avid typist. My personal best is 161WPM (15s, basic English). I type on a custom mechanical keyboard that I built myself, and that's where I get my best speeds. [I actually have two of them](https://imgur.com/gallery/V6pnpEd).
+I consider myself an avid typist. My personal best is 165WPM (15s, basic English). I type on a custom mechanical keyboard that I built myself, and that's where I get my best speeds. [I actually have two of them](https://imgur.com/gallery/V6pnpEd).
 
 Most of my work is done in private repos, but surely there are some interesting things lying around here...
 
